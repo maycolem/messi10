@@ -1,3 +1,13 @@
+:root {
+  --height-header: 40px;
+  --height-timer: 70px;
+}
+@media (min-width: 760px) {
+  :root {
+    --height-header: 70px;
+    --height-timer: 70px;
+  }
+}
 *,
 *::after,
 *::before {
@@ -7,7 +17,7 @@
 }
 header {
   background: white;
-  height: 80px;
+  height: var(--height-header);
   position: fixed;
   top: 0;
   left: 0;
@@ -27,8 +37,8 @@ section {
 }
 
 section.messi {
-  min-height: calc(100vh - 70px);
-  min-height: calc(100dvh - 70px);
+  min-height: calc(100vh - var(--height-timer));
+  min-height: calc(100dvh - var(--height-timer));
 }
 section .messi__wrap {
   width: 100%;
@@ -77,16 +87,10 @@ section.messi_registro {
   align-items: center;
 }
 
-div.messi__timer--opacity0 {
-  flex: 0 0 70px;
-  opacity: 0;
-  pointer-events: none;
-}
-
 div.messi__timer {
   position: sticky;
   bottom: 0px;
-  height: 70px;
+  height: var(--height-timer);
   width: 100%;
   z-index: 3;
   background: red;
@@ -98,7 +102,7 @@ section .messi__wrap--desktop {
 
 .messi__menu {
   display: flex;
-  margin-top: 80px;
+  margin-top: var(--height-header);
   position: absolute;
   top: 0;
   left: 0;
@@ -179,14 +183,23 @@ section .messi__wrap--desktop {
     object-position: bottom center;
     object-fit: contain;
   }
+  .messi__menu {
+    padding: 2rem;
+  }
+  .messi__menu * {
+    font-size: 1rem;
+  }
+  .messi__menu ul {
+    gap: 2rem;
+  }
+}
 
+@media (min-width: 1080px) {
   .messi__menu {
     display: flex;
     justify-content: flex-start;
     width: 50%;
     left: 50%;
-  }
-  .messi__menu ul {
-    gap: 1.5rem;
+    padding: 2rem;
   }
 }
