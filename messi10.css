@@ -1,0 +1,190 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+header {
+  background: white;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+section.messi {
+  min-height: calc(100vh - 70px);
+}
+section .messi__wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: relative;
+}
+
+section .messi__wrap--mobile {
+  position: relative;
+  min-height: 600px;
+}
+
+section .messi__fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+section .messi__photo {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  align-items: center;
+}
+section .messi__photo > img {
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  max-width: max-content;
+}
+
+section.messi_registro {
+  z-index: 4;
+  position: sticky;
+  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.messi__timer--opacity0 {
+  flex: 0 0 70px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+div.messi__timer {
+  position: sticky;
+  bottom: 0px;
+  height: 70px;
+  width: 100%;
+  z-index: 3;
+  background: red;
+}
+
+section .messi__wrap--desktop {
+  display: none;
+}
+
+.messi__menu {
+  display: flex;
+  margin-top: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.messi__menu * {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.messi__menu a {
+  text-decoration: none;
+}
+
+.messi__menu ul {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (min-width: 760px) {
+  section .messi__wrap--mobile {
+    display: none;
+  }
+  section .messi__wrap--desktop {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    min-height: 650px;
+  }
+  section .messi__wrap--desktop .messi__photo {
+    /* display: flex;
+    justify-content: end;
+    position: relative;
+    align-items: center;
+    min-height: 400px; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "left right";
+  }
+
+  section .messi__wrap--desktop .messi__photo .messi__photo__left {
+    grid-area: left;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  section .messi__wrap--desktop .messi__photo .messi__photo__right {
+    grid-area: right;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  section .messi__wrap--desktop .messi__photo .messi__photo__menu {
+    grid-area: menu;
+  }
+
+  section .messi__wrap--desktop .messi__photo .messi__photo__left img {
+    position: absolute;
+    width: 100%;
+    object-position: bottom center;
+    object-fit: contain;
+    max-width: max-content;
+  }
+  section .messi__wrap--desktop .messi__photo .messi__photo__right img {
+    position: absolute;
+    width: 100%;
+    max-width: max-content;
+    object-position: bottom center;
+    object-fit: contain;
+  }
+
+  .messi__menu {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    left: 50%;
+  }
+  .messi__menu ul {
+    gap: 1.5rem;
+  }
+}
