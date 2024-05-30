@@ -21,12 +21,14 @@ img {
 }
 section {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
 }
 
 section.messi {
   min-height: calc(100vh - 70px);
+  min-height: calc(100dvh - 70px);
 }
 section .messi__wrap {
   width: 100%;
