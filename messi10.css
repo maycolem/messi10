@@ -74,8 +74,10 @@ section .messi__photo {
 section .messi__photo > img {
   position: absolute;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   max-width: max-content;
+  object-position: bottom;
+  padding-top: calc(var(--height-header) + 50px);
 }
 
 section.messi_registro {
@@ -194,7 +196,7 @@ section .messi__wrap--desktop {
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1180px) {
   .messi__menu {
     display: flex;
     justify-content: flex-start;
